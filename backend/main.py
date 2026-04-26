@@ -55,7 +55,10 @@ app = FastAPI()
 
 ALLOWED_ORIGINS = [
     "http://localhost:3000", "http://127.0.0.1:3000",
-    "http://localhost:5173", "http://127.0.0.1:5173", "*"
+    "http://localhost:5173", "http://127.0.0.1:5173",
+    "https://waterfootprint-calculator-psi.vercel.app",
+    "https://waterfootprint-calculator-ar888s4m2.vercel.app",
+    "*"
 ]
 
 app.add_middleware(
