@@ -31,7 +31,6 @@ Thumbs.db
 
 # Project specific - large files
 *.csv
-*.joblib
 waterfootprint_xgboost_model.json
 
 # Virtual environments

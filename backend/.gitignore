@@ -11,8 +11,5 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Model files (large)
-*.joblib
-
 # Dataset (large)
 *.csv
