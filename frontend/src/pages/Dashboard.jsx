@@ -6,6 +6,7 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from "recharts";
 import { Droplet, TrendingDown, TrendingUp, AlertCircle, BarChart2, LogOut } from "lucide-react";
+import API_BASE from "../config/api";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
@@ -23,8 +24,8 @@ export default function Dashboard() {
     const headers = { Authorization: `Bearer ${user.token}` };
 
     Promise.all([
-      axios.get("http://127.0.0.1:8000/history", { headers }),
-      axios.get("http://127.0.0.1:8000/personalized-recommendations", { headers })
+      axios.get(`${API_BASE}/history`, { headers }),
+      axios.get(`${API_BASE}/personalized-recommendations`, { headers })
     ])
       .then(([histRes, tipsRes]) => {
         const sorted = [...(histRes.data.history || [])].reverse();

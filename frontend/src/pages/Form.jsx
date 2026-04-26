@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Droplet, Check, RefreshCw } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import API_BASE from "../config/api";
 
 const DEFAULTS = {
   faucetDuration: 0,
@@ -70,7 +71,7 @@ export default function Form({ setResult }) {
 
     try {
       const headers = user?.token ? { Authorization: `Bearer ${user.token}` } : {};
-      const response = await axios.post("http://127.0.0.1:8000/predict", payload, { headers });
+      const response = await axios.post(`${API_BASE}/predict`, payload, { headers });
       const baseWaterFootprint = response.data?.water_footprint ?? response.data?.prediction ?? 0;
       const recs = response.data?.recommendations ?? [];
 

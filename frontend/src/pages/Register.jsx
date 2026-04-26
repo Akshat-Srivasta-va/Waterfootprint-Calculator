@@ -3,6 +3,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import { Droplet, UserPlus } from "lucide-react";
+import API_BASE from "../config/api";
 
 export default function Register() {
   const { login } = useAuth();
@@ -19,7 +20,7 @@ export default function Register() {
     setError("");
     setLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:8000/register", form);
+      const res = await axios.post(`${API_BASE}/register`, form);
       login(res.data.token, res.data.name, res.data.email);
       navigate("/dashboard");
     } catch (err) {
