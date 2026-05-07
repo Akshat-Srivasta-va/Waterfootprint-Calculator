@@ -186,9 +186,7 @@ pip install -r requirements.txt
 Create a `backend/.env` file:
 ```env
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/waterfootprint
-SECRET_KEY=your_jwt_secret_key
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=10080
+JWT_SECRET=your_jwt_secret_key
 ```
 
 ```bash
